@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+.secao{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding-top: 15%;
+    color: white;
+}
+.block{
+    position: relative;
+    margin: 4% auto 0;
+    width: 30%;
+    height: 570px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgb(92, 87, 87));    
+}
+
+.glow::before, .glow::after{
+    content: "";
+    position: absolute;
+    left: -2%;
+    top: -2%;
+    background: linear-gradient(45deg, rgb(42, 104, 228), rgb(56, 93, 180), rgb(255, 255, 255), rgb(77, 123, 179));
+    background-size: 300%;
+    width: 480px;
+    height: 590px;
+    z-index: -1;
+    animation: animate 20s linear infinite;
+    border-radius: 20px;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.glow::after{
+    filter: blur(50px);
+}
+a{
+    background-color: rgb(12, 85, 150);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    
+}
+.img{
+    width: 200px;
+    height: 200px;
+    border-radius: 120px;
+}
+
+.ico{
+    width: 30px;
+    height: 30px;
+    padding-left: 15px;
+}
+
+.ico2{
+    width: 40px;
+    height: 40px;
+    padding-left: 25px;
+}
+
+@media (max-width:800px){
+    body{
+        position: fixed;
+        width: 1000px;
+        margin-left: -300px;
+    }
+    .glow::before, .glow::after{
+        width: 310px;
+        height: 585px;
+    }
+    a{
+        width: 250px;
+    }
+}
+
